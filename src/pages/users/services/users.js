@@ -1,8 +1,8 @@
-import { PAFE_SIZE } from '../constants';
+import { PAGE_SIZE } from '../constants';
 import request from '../../../utils/request';
 
 export function fetch({ page = 1 }) {
-  return request(`/api/users?_page=${page}&limit=${PAFE_SIZE}`)
+  return request(`/api/users?_page=${page}&_limit=${PAGE_SIZE}`)
 }
 
 export function remove(id) {
@@ -10,3 +10,42 @@ export function remove(id) {
     method: 'DELETE',
   })
 }
+
+export function patch(id, values) {
+  return request(`/api/users/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify(values),
+  });
+}
+
+export function create(values) {
+  return request('/api/users', {
+    method: 'POST',
+    body: JSON.stringify(values),
+  });
+}
+
+
+// export function fetch({ page = 1 }) {
+//   return request(`http://socket3.hiredchina.cn/api/v1/users?page=${page}&limit=${PAGE_SIZE}`)
+// }
+
+// export function remove(id) {
+//   return request(`/api/v1/users/${id}`, {
+//     method: 'DELETE',
+//   })
+// }
+
+// export function patch(id, values) {
+//   return request(`/api/v1/users/${id}`, {
+//     method: 'PATCH',
+//     body: JSON.stringify(values),
+//   });
+// }
+
+// export function create(values) {
+//   return request('/api/v1/users', {
+//     method: 'POST',
+//     body: JSON.stringify(values),
+//   });
+// }
