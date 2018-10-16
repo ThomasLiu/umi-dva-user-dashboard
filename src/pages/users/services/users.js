@@ -24,28 +24,3 @@ export function create(values) {
     body: JSON.stringify(values),
   });
 }
-
-
-// export function fetch({ page = 1 }) {
-//   return request(`http://socket3.hiredchina.cn/api/v1/users?page=${page}&limit=${PAGE_SIZE}`)
-// }
-
-// export function remove(id) {
-//   return request(`/api/v1/users/${id}`, {
-//     method: 'DELETE',
-//   })
-// }
-
-// export function patch(id, values) {
-//   return request(`/api/v1/users/${id}`, {
-//     method: 'PATCH',
-//     body: JSON.stringify(values),
-//   });
-// }
-
-// export function create(values) {
-//   return request('/api/v1/users', {
-//     method: 'POST',
-//     body: JSON.stringify(values),
-//   });
-// }
